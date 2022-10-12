@@ -1,0 +1,28 @@
+<br>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+
+    <div class="row mb-3">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="input-group me-2 mb-2 me-lg-3">
+          <span class="input-group-text"><span class="fas fa-search"></span></span>
+          <input type="text" placeholder="User name" class="form-control" data-reflex="debounced:input->UsersReflex#search">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="input-group me-2 me-lg-3">
+          <select class="me-2 me-lg-3 form-control" data-controller="select" data-select-show-search-value="false" required data-reflex="change->UsersReflex#filter">
+            <option selected value="">All</option>
+            <option value="active">Active</option>
+            <option value="archived">Archived</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'search_result' %>
+  </div>
+
+  <div class="col-1"></div>  
+</div>

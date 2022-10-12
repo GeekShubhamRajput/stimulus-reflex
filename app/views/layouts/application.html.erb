@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Fredbase" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render partial: 'layouts/header' %>
+    <div class="container pt-3">
+      <%= yield %>
+      <%= render partial: 'layouts/footer' %>
+    </div> 
+  </body>
+</html>

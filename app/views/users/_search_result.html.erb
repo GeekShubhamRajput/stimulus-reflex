@@ -1,0 +1,32 @@
+<div id="search-results">
+  <table class="table table-striped table-bordered">
+    <thead class="bg-primary">
+      <tr>
+        <th style="width:25%">Name
+          <%#= link_to "Name #{arrow :name}", "#", class: column_css(:name),
+            data: { reflex: "click->UsersReflex#order", column_name: :name, direction: direction } %>
+        </th>
+
+        <th style="width:25%">Status
+          <%#= link_to "Status #{arrow :status}", "#", class: column_css(:status),
+            data: { reflex: "click->UsersReflex#order", column_name: :status, direction: direction } %>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.name, user, class: "text-decoration-none" %></td>
+          <td><%= user.status %></td>
+        </tr>
+      <% end %>
+      <% if @users.blank? %>
+        <tr> 
+          <td colspan="4"> No user found</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

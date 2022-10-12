@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: stimulus_dev
+  pool: 5
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: stimulus_test
+  pool: 5
+  username: postgres
+  password: postgres
