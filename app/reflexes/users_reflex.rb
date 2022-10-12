@@ -10,13 +10,6 @@ class UsersReflex < ApplicationReflex
     params[:filter_by] = element[:value].strip
     update_records
   end
-
-  def order
-    params[:order_by] = element.dataset["column-name"]
-    params[:direction] = element.dataset["direction"]
-    update_records
-  end
-
   
   private
   
@@ -24,10 +17,8 @@ class UsersReflex < ApplicationReflex
     prepare_records
 
     assigns = {
-      query: @query,
-      filter_by: @filter,
-      order_by: @order_by,
-      direction: @direction,
+      query: params[:query],
+      filter_by: params[:filter_by],
       users: @users
     }
 
