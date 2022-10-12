@@ -11,22 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, placeholder: 'Enter your name', class: 'form-control', required: true %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= form.label :status %>
+        <%= form.select :status, user_status_collection, {selected: form.object.status }, class: 'form-control', placeholder: 'Select status', required: true %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <%= form.label :age %>
+        <%= form.text_field :age, placeholder: 'Enter your age', class: 'form-control', required: true %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="actions">
+        <%= form.submit :save ,class: 'btn btn-success'%>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.select :status, user_status_collection %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.text_field :age %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
